@@ -1,0 +1,360 @@
+1,10fthf[c],10-Formyltetrahydrofolate,C20H21N7O7
+2,13dpg[c],3-Phospho-D-glyceroyl phosphate,C3H4O10P2
+3,25aics[c],(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate,C13H15N4O12P
+4,2oxoadp[c],2-Oxoadipate,C6H6O5
+5,2pg[c],D-Glycerate 2-phosphate,C3H4O7P
+6,34hpp[c],3-(4-Hydroxyphenyl)pyruvate,C9H7O4
+7,3dsphgn[c],3-Dehydrosphinganine,C18H38NO2
+8,3hanthrn[c],3-Hydroxyanthranilate,C7H7NO3
+9,3mob[c],3-Methyl-2-oxobutanoate,C5H7O3
+10,3mop[c],(S)-3-Methyl-2-oxopentanoate,C6H9O3
+11,3pg[c],3-Phospho-D-glycerate,C3H4O7P
+12,3php[c],3-Phosphohydroxypyruvate,C3H2O7P
+13,4fumacac[c],4-Fumarylacetoacetate,C8H6O6
+14,4mlacac[c],4-Maleylacetoacetate,C8H6O6
+15,4mop[c],4-Methyl-2-oxopentanoate,C6H9O3
+16,5aizc[c],5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate,C9H11N3O9P
+17,6pgc[c],6-Phospho-D-gluconate,C6H10O10P
+18,6pgl[c],6-phospho-D-glucono-1,5-lactone,C6H9O9P
+19,L2aadp[c],L-2-Aminoadipate,C6H10NO4
+20,Lfmkynr[c],L-Formylkynurenine,C11H12N2O4
+21,Lkynr[c],L-Kynurenine,C10H12N2O3
+22,R1coa_hs[c],R group 1 Coenzyme A homo sapiens,XCO2C21H31N7O15P3S
+23,Rtotal[c],R total,CO2FULLR
+24,Rtotal2[c],R total 2 position,CO2FULLR2
+25,Rtotal2coa[c],R total 2 coenzyme A,CO2FULLR2C21H31N7O15P3S
+26,Rtotalcoa[c],R total Coenzyme A,CO2FULLRC21H31N7O15P3S
+27,Tyr_ggn[c],Tyr-194 of apo-glycogenin protein (primer for glycogen synthesis),XOH
+28,aacoa[c],Acetoacetyl-CoA,C25H36N7O18P3S
+29,acac[c],Acetoacetate,C4H5O3
+30,accoa[c],Acetyl-CoA,C23H34N7O17P3S
+31,acrn[c],O-Acetylcarnitine,C9H17NO4
+32,adp[c],ADP,C10H12N5O10P2
+33,aicar[c],5-Amino-1-(5-Phospho-D-ribosyl)imidazole-4-carboxamide,C9H13N4O8P
+34,air[c],5-amino-1-(5-phospho-D-ribosyl)imidazole,C8H12N3O7P
+35,akg[c],2-Oxoglutarate,C5H4O5
+36,ala_L[c],L-Alanine,C3H7NO2
+37,alpa_hs[c],lysophosphatidic acid (homo sapiens),C3H6O5PFULLRCO2
+38,am6sa[c],2-Aminomuconate 6-semialdehyde,C6H7NO3
+39,amp[c],AMP,C10H12N5O7P
+40,amuco[c],2-Aminomuconate,C6H6NO4
+41,arg_L[c],L-Arginine,C6H15N4O2
+42,argsuc[c],N(omega)-(L-Arginino)succinate,C10H17N4O6
+43,asn_L[c],L-Asparagine,C4H8N2O3
+44,asp_L[c],L-Aspartate,C4H6NO4
+45,atp[c],ATP,C10H12N5O13P3
+46,cbasp[c],N-Carbamoyl-L-aspartate,C5H6N2O5
+47,cbp[c],Carbamoyl phosphate,CH2NO5P
+48,cdp[c],CDP,C9H12N3O11P2
+49,cdpchol[c],CDPcholine,C14H25N4O11P2
+50,cdpdag_hs[c],CDP diacylglycerol (homo sapiens),C12H17N3O11P2FULLRCO2FULLR2CO2
+51,chol[c],Choline,C5H14NO
+52,cholp[c],Choline phosphate,C5H13NO4P
+53,cit[c],Citrate,C6H5O7
+54,citr_L[c],L-Citrulline,C6H13N3O3
+55,cl[c],Chloride,Cl
+56,clpn_hs[c],cardiolipin (homo sapiens),C9H16O9P2FULLRCO2FULLR2CO2FULLRCO2FULLR2CO2
+57,cmp[c],CMP,C9H12N3O8P
+58,cmusa[c],2-Amino-3-carboxymuconate semialdehyde,C7H6NO5
+59,co2[c],CO2,CO2
+60,coa[c],Coenzyme A,C21H32N7O16P3S
+61,crm_hs[c],ceramide (homo sapiens),C18H36NO2FULLRCO
+62,crn[c],L-Carnitine,C7H15NO3
+63,ctp[c],CTP,C9H12N3O14P3
+64,dadp[c],dADP,C10H12N5O9P2
+65,dag_hs[c],diacylglycerol (homo sapiens),C3H6OFULLRCO2FULLR2CO2
+66,datp[c],dATP,C10H12N5O12P3
+67,dcamp[c],N6-(1,2-Dicarboxyethyl)-AMP,C14H14N5O11P
+68,dcdp[c],dCDP,C9H12N3O10P2
+69,dctp[c],dCTP,C9H12N3O13P3
+70,dgdp[c],dGDP,C10H12N5O10P2
+71,dgtp[c],dGTP,C10H12N5O13P3
+72,dhap[c],Dihydroxyacetone phosphate,C3H5O6P
+73,dhbpt[c],6,7-Dihydrobiopterin,C9H13N5O3
+74,dhcrm_hs[c],dihydroceramide (homo sapiens),C18H38NO2FULLRCO
+75,dhf[c],7,8-Dihydrofolate,C19H19N7O6
+76,dhor_S[c],(S)-Dihydroorotate,C5H5N2O4
+77,dtdp[c],dTDP,C10H13N2O11P2
+78,dtmp[c],dTMP,C10H13N2O8P
+79,dttp[c],dTTP,C10H13N2O14P3
+80,dudp[c],dUDP,C9H11N2O11P2
+81,dump[c],dUMP,C9H11N2O8P
+82,e4p[c],D-Erythrose 4-phosphate,C4H7O7P
+83,f6p[c],D-Fructose 6-phosphate,C6H11O9P
+84,fad[c],Flavin adenine dinucleotide oxidized,C27H31N9O15P2
+85,fadh2[c],Flavin adenine dinucleotide reduced,C27H33N9O15P2
+86,fdp[c],D-Fructose 1,6-bisphosphate,C6H10O12P2
+87,fgam[c],N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide,C8H13N2O9P
+88,for[c],Formate,CH1O2
+89,fpram[c],2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine,C8H15N3O8P
+90,fprica[c],5-Formamido-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide,C10H13N4O9P
+91,fum[c],Fumarate,C4H2O4
+92,g1p[c],D-Glucose 1-phosphate,C6H11O9P
+93,g3p[c],Glyceraldehyde 3-phosphate,C3H5O6P
+94,g6p[c],D-Glucose 6-phosphate,C6H11O9P
+95,gar[c],N1-(5-Phospho-D-ribosyl)glycinamide,C7H14N2O8P
+96,gdp[c],GDP,C10H12N5O11P2
+97,ggn[c],primed glycogenin (glycogenin-8[1,4-Glc]),C48H81O41X
+98,glc_D[c],D-Glucose,C6H12O6
+99,gln_L[c],L-Glutamine,C5H10N2O3
+100,glu_L[c],L-Glutamate,C5H8NO4
+101,gly[c],Glycine,C2H5NO2
+102,glyc3p[c],Glycerol 3-phosphate,C3H7O6P
+103,glygn1[c],glycogen, structure 1 (glycogenin-11[1,4-Glc]),C66H111O56X
+104,glygn2[c],glycogen, structure 2 (glycogenin-1,6-{7[1,4-Glc], 4[1,4-Glc]}),C66H111O56X
+105,gmp[c],GMP,C10H12N5O8P
+106,gtp[c],GTP,C10H12N5O14P3
+107,gudac[c],Guanidinoacetate,C3H7N3O2
+108,h[c],H+,H
+109,h2co3[c],carbonic acid,H2CO3
+110,h2o[c],H2O,H2O
+111,hLkynr[c],3-Hydroxy-L-kynurenine,C10H12N2O4
+112,hco3[c],Bicarbonate,CHO3
+113,hdca[c],Hexadecanoate (n-C16:0),C16H31O2
+114,hdcea[c],Hexadecenoate (n-C16:1),C16H29O2
+115,hdcoa[c],Hexadecenoyl-CoA (n-C16:1CoA),C37H60N7O17P3S
+116,hgentis[c],Homogentisate,C8H7O4
+117,hmgcoa[c],Hydroxymethylglutaryl-CoA,C27H39N7O20P3S
+118,ile_L[c],L-Isoleucine,C6H13NO2
+119,imp[c],IMP,C10H11N4O8P
+120,inost[c],myo-Inositol,C6H12O6
+121,k[c],potassium,K
+122,lac_L[c],L-Lactate,C3H5O3
+123,leu_L[c],L-Leucine,C6H13NO2
+124,lpchol_hs[c],lysophosphatidylcholine (homo sapiens),C8H19NO5PFULLRCO2
+125,lys_L[c],L-Lysine,C6H15N2O2
+126,mag_hs[c],monoacylglycerol 2 (homo sapiens),C3H7O2FULLR2CO2
+127,mal_L[c],L-Malate,C4H4O5
+128,malcoa[c],Malonyl-CoA,C24H33N7O19P3S
+129,methf[c],5,10-Methenyltetrahydrofolate,C20H20N7O6
+130,mi1p_D[c],1D-myo-Inositol 1-phosphate,C6H11O9P
+131,mlthf[c],5,10-Methylenetetrahydrofolate,C20H21N7O6
+132,na1[c],Sodium,Na
+133,nad[c],Nicotinamide adenine dinucleotide,C21H26N7O14P2
+134,nadh[c],Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2
+135,nadp[c],Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3
+136,nadph[c],Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3
+137,nh4[c],Ammonium,H4N
+138,o2[c],O2,O2
+139,oaa[c],Oxaloacetate,C4H2O5
+140,ocdca[c],octadecanoate (n-C18:0),C18H35O2
+141,ocdcea[c],octadecenoate (n-C18:1),C18H33O2
+142,odecoa[c],Octadecenoyl-CoA (n-C18:1CoA),C39H64N7O17P3S
+143,orn[c],Ornithine,C5H13N2O2
+144,orot[c],Orotate,C5H3N2O4
+145,orot5p[c],Orotidine 5'-phosphate,C10H10N2O11P
+146,pa_hs[c],phosphatidic acid (homo sapiens),C3H5O4PFULLRCO2FULLR2CO2
+147,pail_hs[c],phosphatidylinositol (homo sapiens),C9H16O9PFULLRCO2FULLR2CO2
+148,pchol_hs[c],Phosphatidylcholine (homo sapiens),C8H18NO4PFULLRCO2FULLR2CO2
+149,pe_hs[c],phosphatidylethanolamine (homo sapiens),C5H12NO4PFULLRCO2FULLR2CO2
+150,pep[c],Phosphoenolpyruvate,C3H2O6P
+151,pglyc_hs[c],phosphatidylglycerol (homo sapiens),C6H12O6PFULLRCO2FULLR2CO2
+152,pgp_hs[c],phosphatidyl glycerol phosphate (homo sapiens),C6H11O9P2FULLRCO2FULLR2CO2
+153,phe_L[c],L-Phenylalanine,C9H11NO2
+154,pi[c],Phosphate,HO4P
+155,pmtcoa[c],Palmitoyl-CoA (n-C16:0CoA),C37H62N7O17P3S
+156,ppi[c],Diphosphate,HO7P2
+157,pram[c],5-Phospho-beta-D-ribosylamine,C5H11NO7P
+158,pro_L[c],L-Proline,C5H9NO2
+159,prpp[c],5-Phospho-alpha-D-ribose 1-diphosphate,C5H8O14P3
+160,ps_hs[c],phosphatidylserine (homo sapiens),C6H11NO6PFULLRCO2FULLR2CO2
+161,pser_L[c],O-Phospho-L-serine,C3H6NO6P
+162,pyr[c],Pyruvate,C3H3O3
+163,r5p[c],alpha-D-Ribose 5-phosphate,C5H9O8P
+164,ru5p_D[c],D-Ribulose 5-phosphate,C5H9O8P
+165,s7p[c],Sedoheptulose 7-phosphate,C7H13O10P
+166,ser_L[c],L-Serine,C3H7NO3
+167,sphgn[c],Sphinganine,C18H40NO2
+168,sphmyln_hs[c],sphingomyelin (homo sapiens),C23H48N2O5PFULLRCO
+169,stcoa[c],Stearoyl-CoA (n-C18:0CoA),C39H66N7O17P3S
+170,thbpt[c],Tetrahydrobiopterin,C9H15N5O3
+171,thbpt4acam[c],Tetrahydrobiopterin-4a-carbinolamine,C9H15N5O4
+172,thf[c],5,6,7,8-Tetrahydrofolate,C19H21N7O6
+173,thr_L[c],L-Threonine,C4H9NO3
+174,trdox[c],Oxidized thioredoxin,X
+175,trdrd[c],Reduced thioredoxin,XH2
+176,trp_L[c],L-Tryptophan,C11H12N2O2
+177,tyr_L[c],L-Tyrosine,C9H11NO3
+178,udp[c],UDP,C9H11N2O12P2
+179,udpg[c],UDPglucose,C15H22N2O17P2
+180,ump[c],UMP,C9H11N2O9P
+181,urea[c],Urea,CH4N2O
+182,utp[c],UTP,C9H11N2O15P3
+183,val_L[c],L-Valine,C5H11NO2
+184,xmp[c],Xanthosine 5'-phosphate,C10H11N4O9P
+185,xu5p_D[c],D-Xylulose 5-phosphate,C5H9O8P
+186,ala_L[e],L-Alanine,C3H7NO2
+187,arg_L[e],L-Arginine,C6H15N4O2
+188,asn_L[e],L-Asparagine,C4H8N2O3
+189,asp_L[e],L-Aspartate,C4H6NO4
+190,chol[e],Choline,C5H14NO
+191,cit[e],Citrate,C6H5O7
+192,cl[e],Chloride,Cl
+193,co2[e],CO2,CO2
+194,glc_D[e],D-Glucose,C6H12O6
+195,gln_L[e],L-Glutamine,C5H10N2O3
+196,glu_L[e],L-Glutamate,C5H8NO4
+197,gly[e],Glycine,C2H5NO2
+198,h[e],H+,H
+199,h2o[e],H2O,H2O
+200,hco3[e],Bicarbonate,CHO3
+201,ile_L[e],L-Isoleucine,C6H13NO2
+202,k[e],potassium,K
+203,lac_L[e],L-Lactate,C3H5O3
+204,leu_L[e],L-Leucine,C6H13NO2
+205,lys_L[e],L-Lysine,C6H15N2O2
+206,na1[e],Sodium,Na
+207,nh4[e],Ammonium,H4N
+208,o2[e],O2,O2
+209,orn[e],Ornithine,C5H13N2O2
+210,phe_L[e],L-Phenylalanine,C9H11NO2
+211,pi[e],Phosphate,HO4P
+212,pro_L[e],L-Proline,C5H9NO2
+213,ser_L[e],L-Serine,C3H7NO3
+214,thr_L[e],L-Threonine,C4H9NO3
+215,trp_L[e],L-Tryptophan,C11H12N2O2
+216,tyr_L[e],L-Tyrosine,C9H11NO3
+217,urea[e],Urea,CH4N2O
+218,val_L[e],L-Valine,C5H11NO2
+219,10fthf[m],10-Formyltetrahydrofolate,C20H21N7O7
+220,1pyr5c[m],1-Pyrroline-5-carboxylate,C5H6NO2
+221,2aobut[m],L-2-Amino-3-oxobutanoate,C4H7NO3
+222,2maacoa[m],2-Methyl-3-acetoacetyl-CoA,C26H38N7O18P3S
+223,2mb2coa[m],trans-2-Methylbut-2-enoyl-CoA,C26H38N7O17P3S
+224,2mbcoa[m],2-Methylbutanoyl-CoA,C26H40N7O17P3S
+225,2mop[m],2-Methyl-3-oxopropanoate,C4H5O3
+226,2mp2coa[m],2-Methylprop-2-enoyl-CoA,C25H36N7O17P3S
+227,2oxoadp[m],2-Oxoadipate,C6H6O5
+228,3hbcoa[m],(S)-3-Hydroxybutanoyl-CoA,C25H38N7O18P3S
+229,3hibutcoa[m],(S)-3-Hydroxyisobutyryl-CoA,C25H38N7O18P3S
+230,3hmbcoa[m],(S)-3-Hydroxy-2-methylbutyryl-CoA,C26H40N7O18P3S
+231,3hmp[m],3-Hydroxy-2-methylpropanoate,C4H7O3
+232,3mb2coa[m],3-Methylbut-2-enoyl-CoA,C26H38N7O17P3S
+233,3mgcoa[m],3-Methylglutaconyl-CoA,C27H37N7O19P3S
+234,3mob[m],3-Methyl-2-oxobutanoate,C5H7O3
+235,3mop[m],(S)-3-Methyl-2-oxopentanoate,C6H9O3
+236,4mop[m],4-Methyl-2-oxopentanoate,C6H9O3
+237,L2aadp[m],L-2-Aminoadipate,C6H10NO4
+238,L2aadp6sa[m],L-2-Aminoadipate 6-semialdehyde,C6H11NO3
+239,aacoa[m],Acetoacetyl-CoA,C25H36N7O18P3S
+240,acac[m],Acetoacetate,C4H5O3
+241,accoa[m],Acetyl-CoA,C23H34N7O17P3S
+242,acrn[m],O-Acetylcarnitine,C9H17NO4
+243,adp[m],ADP,C10H12N5O10P2
+244,akg[m],2-Oxoglutarate,C5H4O5
+245,alpro[m],S-Aminomethyldihydrolipoylprotein,CH6NS2X
+246,arg_L[m],L-Arginine,C6H15N4O2
+247,asn_L[m],L-Asparagine,C4H8N2O3
+248,asp_L[m],L-Aspartate,C4H6NO4
+249,atp[m],ATP,C10H12N5O13P3
+250,b2coa[m],Crotonoyl-CoA,C25H36N7O17P3S
+251,cbp[m],Carbamoyl phosphate,CH2NO5P
+252,cit[m],Citrate,C6H5O7
+253,citr_L[m],L-Citrulline,C6H13N3O3
+254,co2[m],CO2,CO2
+255,coa[m],Coenzyme A,C21H32N7O16P3S
+256,crn[m],L-Carnitine,C7H15NO3
+257,dhlpro[m],Dihydrolipolprotein,H2S2X
+258,etfox[m],Electron transfer flavoprotein oxidized,R
+259,etfrd[m],Electron transfer flavoprotein reduced,RH2
+260,fad[m],Flavin adenine dinucleotide oxidized,C27H31N9O15P2
+261,fadh2[m],Flavin adenine dinucleotide reduced,C27H33N9O15P2
+262,ficytC[m],Ferricytochrome c,C42H54FeN8O6S2
+263,focytC[m],Ferrocytochrome C,C42H54FeN8O6S2
+264,fum[m],Fumarate,C4H2O4
+265,gdp[m],GDP,C10H12N5O11P2
+266,gln_L[m],L-Glutamine,C5H10N2O3
+267,glu_L[m],L-Glutamate,C5H8NO4
+268,glu5p[m],L-Glutamate 5-phosphate,C5H8NO7P
+269,glu5sa[m],L-Glutamate 5-semialdehyde,C5H9NO3
+270,glutcoa[m],Glutaryl-CoA,C26H37N7O19P3S
+271,gly[m],Glycine,C2H5NO2
+272,gtp[m],GTP,C10H12N5O14P3
+273,h[m],H+,H
+274,h2o[m],H2O,H2O
+275,hco3[m],Bicarbonate,CHO3
+276,hmgcoa[m],Hydroxymethylglutaryl-CoA,C27H39N7O20P3S
+277,ibcoa[m],Isobutyryl-CoA,C25H38N7O17P3S
+278,icit[m],Isocitrate,C6H5O7
+279,ivcoa[m],Isovaleryl-CoA,C26H40N7O17P3S
+280,lpro[m],Lipoylprotein,S2X
+281,lys_L[m],L-Lysine,C6H15N2O2
+282,mal_L[m],L-Malate,C4H4O5
+283,methf[m],5,10-Methenyltetrahydrofolate,C20H20N7O6
+284,mlthf[m],5,10-Methylenetetrahydrofolate,C20H21N7O6
+285,mmcoa_R[m],(R)-Methylmalonyl-CoA,C25H35N7O19P3S
+286,mmcoa_S[m],(S)-Methylmalonyl-CoA,C25H35N7O19P3S
+287,nad[m],Nicotinamide adenine dinucleotide,C21H26N7O14P2
+288,nadh[m],Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2
+289,nadp[m],Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3
+290,nadph[m],Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3
+291,nh4[m],Ammonium,H4N
+292,o2[m],O2,O2
+293,oaa[m],Oxaloacetate,C4H2O5
+294,orn[m],Ornithine,C5H13N2O2
+295,pe_hs[m],phosphatidylethanolamine (homo sapiens),C5H12NO4PFULLRCO2FULLR2CO2
+296,pi[m],Phosphate,HO4P
+297,ppcoa[m],Propanoyl-CoA,C24H36N7O17P3S
+298,pro_L[m],L-Proline,C5H9NO2
+299,ps_hs[m],phosphatidylserine (homo sapiens),C6H11NO6PFULLRCO2FULLR2CO2
+300,pyr[m],Pyruvate,C3H3O3
+301,q10[m],Ubiquinone-10,C59H90O4
+302,q10h2[m],Ubiquinol-10,C59H92O4
+303,saccrp_L[m],L-Saccharopine,C11H19N2O6
+304,succ[m],Succinate,C4H4O4
+305,succoa[m],Succinyl-CoA,C25H35N7O19P3S
+306,thf[m],5,6,7,8-Tetrahydrofolate,C19H21N7O6
+307,urea[m],Urea,CH4N2O
+308,44mctr[r],4,4-dimethylcholesta-8,14,24-trienol,C29H46O
+309,44mzym[r],4,4-dimethylzymosterol,C29H48O
+310,4mzym_int1[r],4-Methylzymosterol intermediate 1,C29H46O3
+311,4mzym_int2[r],4-Methylzymosterol intermediate 2,C28H44O
+312,7dhchsterol[r],7-Dehydrocholesterol,C27H44O
+313,R1coa_hs[r],R group 1 Coenzyme A homo sapiens,XCO2C21H31N7O15P3S
+314,Ssq23epx[r],(S)-Squalene-2,3-epoxide,C30H50O
+315,chlstol[r],Cholesta-7,24-dien-3beta-ol,C27H44O
+316,chsterol[r],Cholesterol,C27H46O
+317,co2[r],CO2,CO2
+318,coa[r],Coenzyme A,C21H32N7O16P3S
+319,fad[r],Flavin adenine dinucleotide oxidized,C27H31N9O15P2
+320,fadh2[r],Flavin adenine dinucleotide reduced,C27H33N9O15P2
+321,for[r],Formate,CH1O2
+322,frdp[r],Farnesyl diphosphate,C15H25O7P2
+323,h[r],H+,H
+324,h2o[r],H2O,H2O
+325,lanost[r],Lanosterol,C30H50O
+326,lthstrl[r],5alpha-Cholest-7-en-3beta-ol,C27H46O
+327,nad[r],Nicotinamide adenine dinucleotide,C21H26N7O14P2
+328,nadh[r],Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2
+329,nadp[r],Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3
+330,nadph[r],Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3
+331,o2[r],O2,O2
+332,ppi[r],Diphosphate,HO7P2
+333,sql[r],Squalene,C30H50
+334,xolest_hs[r],cholesterol ester,C27H45XCO2
+335,zym_int2[r],zymosterol intermediate 2,C27H42O
+336,zymst[r],zymosterol,C27H44O
+337,5dpmev[x],(R)-5-Diphosphomevalonate,C6H10O10P2
+338,5pmev[x],(R)-5-Phosphomevalonate,C6H10O7P
+339,adp[x],ADP,C10H12N5O10P2
+340,atp[x],ATP,C10H12N5O13P3
+341,co2[x],CO2,CO2
+342,coa[x],Coenzyme A,C21H32N7O16P3S
+343,dmpp[x],Dimethylallyl diphosphate,C5H9O7P2
+344,frdp[x],Farnesyl diphosphate,C15H25O7P2
+345,grdp[x],Geranyl diphosphate,C10H17O7P2
+346,h[x],H+,H
+347,h2o[x],H2O,H2O
+348,hmgcoa[x],Hydroxymethylglutaryl-CoA,C27H39N7O20P3S
+349,ipdp[x],Isopentenyl diphosphate,C5H9O7P2
+350,mev_R[x],(R)-Mevalonate,C6H11O4
+351,nad[x],Nicotinamide adenine dinucleotide,C21H26N7O14P2
+352,nadh[x],Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2
+353,nadp[x],Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3
+354,nadph[x],Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3
+355,o2[x],O2,O2
+356,pi[x],Phosphate,HO4P
+357,ppi[x],Diphosphate,HO7P2
+358,mal_L[e],L-Malate,C4H4O5
+359,h[t],H+,H
+360,2aobut[c],L-2-Amino-3-oxobutanoate,C4H7NO3
