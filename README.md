@@ -29,7 +29,9 @@ install the GLPK package, you would execute the command in the REPL:
 
 ## Documentation
 To use this code for your project, or to take advantage of changes that we have made to the Palsson study,
-check out our [documentation](https://varnerlab.github.io/Core-Cancer-Model/).
+[check out the documentation](https://varnerlab.github.io/Core-Cancer-Model/).
 
 ## Funding
-The work described was supported by the Center on the Physics of Cancer Metabolism through Award Number 1U54CA210184-01 from the National Cancer Institute. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Cancer Institute or the National Institutes of Health.  
+The work described was supported by the [Center on the Physics of Cancer Metabolism at Cornell University](https://psoc.engineering.cornell.edu) through Award Number 1U54CA210184-01 from the [National Cancer Institute](https://www.cancer.gov).
+The content is solely the responsibility of the authors and does not necessarily
+represent the official views of the [National Cancer Institute](https://www.cancer.gov) or the [National Institutes of Health](https://www.nih.gov).  
