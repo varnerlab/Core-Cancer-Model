@@ -24,4 +24,11 @@ and requires a few [Julia](https://docs.julialang.org/en/stable/) packages to ru
 These packages can be installed using the ``Pkg.add()`` command in the Julia REPL. For example, to
 install the GLPK package, you would execute the command in the REPL:
 
-``julia>Pkg.add("GLPK")``
+  julia> Pkg.add("GLPK")
+
+### Documentation ###
+To use this code for your project, or to take advantage of changes that we have made to the Palsson study,
+check out our [documentation](https://varnerlab.github.io/Core-Cancer-Model/).
+
+### Funding ###
+The work described was supported by the Center on the Physics of Cancer Metabolism through Award Number 1U54CA210184-01 from the National Cancer Institute. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Cancer Institute or the National Institutes of Health.  
