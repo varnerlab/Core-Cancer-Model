@@ -19,9 +19,9 @@ and requires a few [Julia](https://docs.julialang.org/en/stable/) packages to ru
 ---: | :--- |
 | [GLPK](https://github.com/JuliaOpt/GLPK.jl) | GNU Linear programming kit package for Julia |
 | [MAT](https://github.com/JuliaIO/MAT.jl) | Julia package to read/write MATLAB binary files |
-| [JSON](https://github.com/JuliaIO/JSON.jl) | Julia JSON parser 
+| [JSON](https://github.com/JuliaIO/JSON.jl) | Julia JSON parser
 
-These packages can be installed using the ``Pkg.add()`` command at the Julia command prompt. For example, to
-install the GLPK package, you would execute the command:
+These packages can be installed using the ``Pkg.add()`` command in the Julia REPL. For example, to
+install the GLPK package, you would execute the command in the REPL:
 
-  ``julia>Pkg.add("GLPK")``
+``julia>Pkg.add("GLPK")``
