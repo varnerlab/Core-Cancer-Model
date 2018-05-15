@@ -16,7 +16,7 @@ This code is written in [Julia](https://docs.julialang.org/en/stable/),
 and requires a few [Julia](https://docs.julialang.org/en/stable/) packages to run:
 
 | Packages | Description | URL |
---------------------------------
+--- | --- | --- 
 | GLPK | GNU Linear programming kit package for Julia | https://github.com/JuliaOpt/GLPK.jl |
 | MAT | Julia package to read Matlab binary files | https://github.com/JuliaIO/MAT.jl |
 | JSON | Julia JSON parser | https://github.com/JuliaIO/JSON.jl |
