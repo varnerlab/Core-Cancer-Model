@@ -126,22 +126,38 @@ function build_gene_length_dictionary(cobra_dictionary)
     return (gene_length_dictionary,average_gene_length)
 end
 
-function load_biophysical_data_dictionary(organism::Symbol)
+function load_biophysical_data_dictionary(organismid::Symbol)
 
     # initialize -
     biophysical_data_dictionary = Dict{String,String}()
     raw_database_dict = Dict{Any,Any}()
 
-    # where are my organism files stored?
+    # where are all my cell files stored?
     path_to_organism_directory = "$(pwd())/grn_model/organism"
-    if (organism == :LINE_HL_60_TB)
+
+    # load the mapping file -
+    path_to_biophysics_map = "$(pwd())/grn_model/organism/Map.json"
+
+    # parse this file, and return the mapping dictionary -
+    biophysics_mapping_dictionary = JSON.parsefile(path_to_biophysics_map)
+
+    # what is the default file path?
+    path_to_model_file = "$(path_to_organism_directory)/Default.json"
+
+    # convert organismid to key, and update the model path -
+    key_value = string(organismid)
+    if (haskey(biophysics_mapping_dictionary,key_value) == true)
+
+        # ok, we have this key, grab the associated dictionary and load the filename -
+        biophysics_file_name = biophysics_mapping_dictionary[key_value]["biophysics_file_name"]
 
         # where can we find the biophysical properties?
-        path_to_model_file = "$(path_to_organism_directory)/LINE_HL_60_TB.json"
-
-        # load HL60 dictionary -
-        raw_database_dict = JSON.parsefile(path_to_model_file)
+        path_to_model_file = "$(path_to_organism_directory)/$(biophysics_file_name)"
     end
+
+    # ok, we have a path (perhaps organism specific), load it up -
+    # load the biophysics dictionary -
+    raw_database_dict = JSON.parsefile(path_to_model_file)
 
     # remove the top level dictionary -
     biophysical_data_dictionary = raw_database_dict["biophysical_properties"]
@@ -164,21 +180,37 @@ function load_biophysical_data_dictionary(organism::Symbol)
     return biophysical_data_dictionary
 end
 
-function load_transcription_factor_data_dictionary(organism::Symbol)
+function load_transcription_factor_data_dictionary(organismid::Symbol)
 
     # initialize -
     transcription_factor_dictionary = Dict{String,String}()
     raw_database_dict = Dict{Any,Any}()
 
+    # Where is the cell biophysics data stored?
     path_to_organism_directory = "$(pwd())/grn_model/organism"
-    if (organism == :LINE_HL_60_TB)
+
+    # load the mapping file -
+    path_to_biophysics_map = "$(pwd())/grn_model/organism/Map.json"
+
+    # parse the mapping file, and return the mapping dictionary -
+    biophysics_mapping_dictionary = JSON.parsefile(path_to_biophysics_map)
+
+    # what is the default file path?
+    path_to_model_file = "$(path_to_organism_directory)/Default.json"
+
+    # convert organismid to key, and update the model path -
+    key_value = string(organismid)
+    if (haskey(biophysics_mapping_dictionary,key_value) == true)
+
+        # ok, we have this key, grab the associated dictionary and load the filename -
+        biophysics_file_name = biophysics_mapping_dictionary[key_value]["biophysics_file_name"]
 
         # where can we find the biophysical properties?
-        path_to_model_file = "$(path_to_organism_directory)/LINE_HL_60_TB.json"
-
-        # load HL60 dictionary -
-        raw_database_dict = JSON.parsefile(path_to_model_file)
+        path_to_model_file = "$(path_to_organism_directory)/$(biophysics_file_name)"
     end
+
+    # Load -
+    raw_database_dict = JSON.parsefile(path_to_model_file)
 
     # remove the top level dictionary -
     transcription_factor_dictionary = raw_database_dict["basal_transcription_factor_abundance"]
@@ -217,6 +249,33 @@ function find_data_index_of_gene(match_gene_id,mRNA_cluster_data_dictionary)
     gida = mRNA_cluster_data_dictionary["gene_id_array"]
     idx_data = find(gida .== match_gene_id)
     return idx_data
+end
+
+function build_expression_file_path(organismid::Symbol)
+
+    # we need to figure out which cellmass file to load -
+    # load the mapping file -
+    path_to_expression_map = "$(pwd())/cobra_code/expression/Map.json"
+
+    # parse this file, and return the mapping dictionary -
+    expression_mapping_dictionary = JSON.parsefile(path_to_expression_map)
+
+    # convert organismid to key -
+    key_value = string(organismid)
+    if (haskey(expression_mapping_dictionary,key_value) == true)
+
+        # ok, we have this key, grab the associated dictionary and load the filename -
+        expression_file_name = expression_mapping_dictionary[key_value]["expression_file_name"]
+
+        # build the path -
+        expression_file_path = "$(pwd())/cobra_code/expression/$(expression_file_name)"
+
+        # return -
+        return expression_file_path
+    end
+
+    # default -
+    path_to_default_expression_file = "$(pwd())/cobra_code/expression/Default-Expression.csv"
 end
 
 function GRNDataDictionary(organism::Symbol)
@@ -298,7 +357,7 @@ function GRNDataDictionary(organism::Symbol)
 
     # load the clustering results -
     path_to_mRNA_cluster_file = "$(pwd())/grn_model/system/mRNA_cluster_data_dictionary.mat"
-    path_to_experimental_expression_file = "$(pwd())/cobra_code/Expression-HL60.csv"
+    path_to_experimental_expression_file = build_expression_file_path(organism)
     mRNA_cluster_data_dictionary = Dict{String,Any}()
     if (filesize(path_to_mRNA_cluster_file) == 0)
 

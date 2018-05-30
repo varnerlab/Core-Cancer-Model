@@ -1,0 +1,8 @@
+{
+  "LINE_HL_60_TB":{
+    "expression_file_name":"HL60-Expression.csv"
+  },
+  "LINE_MCF7":{
+    "expression_file_name":"MCF7-Expression.csv"
+  }
+}

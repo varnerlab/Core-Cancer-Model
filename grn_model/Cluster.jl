@@ -2,7 +2,7 @@
 function cluster_mRNA_data(path_to_expression_file,number_of_clusters)
 
     # load the data -
-    raw_data_array = readdlm("../cobra_code/Expression-HL60.csv",',')
+    raw_data_array = readdlm(path_to_expression_file,',')
 
     # remove the gene id's
     data_array = transpose(raw_data_array[:,2:end])

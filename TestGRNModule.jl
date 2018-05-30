@@ -2,7 +2,7 @@
 include("Include.jl")
 
 # set the organism -
-organism = :LINE_HL_60_TB
+organism = :LINE_MCF7
 
 # load the dd with the appropriate organism symbol -
 dd = GRNModule.GRNDataDictionary(organism)

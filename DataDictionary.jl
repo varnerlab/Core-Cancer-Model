@@ -1,4 +1,4 @@
-function maximize_cellmass_data_dictionary_dipp(time_start,time_stop,time_step_size)
+function maximize_cellmass_data_dictionary_dipp(organismid)
 
     # HL-60 data taken from Sci reports paper -
     exchange_flux_array = [
@@ -39,7 +39,7 @@ function maximize_cellmass_data_dictionary_dipp(time_start,time_stop,time_step_s
     ]
 
     # load the default data dictionary -
-    data_dictionary = MetabolismDataDictionary(time_start,time_stop,time_step_size)
+    data_dictionary = MetabolismDataDictionary(organismid)
 
     # modify the data dictionary -
     objective_coefficient_array = data_dictionary["objective_coefficient_array"]
@@ -101,8 +101,6 @@ function maximize_cellmass_data_dictionary_dipp(time_start,time_stop,time_step_s
 
         if (flux_index>number_of_exchange_fluxes)
 
-
-
             # get the VMAX value -
             vmax = vmax_array[flux_index]
             rule_value = v_array[flux_index]
@@ -128,7 +126,7 @@ function maximize_cellmass_data_dictionary_dipp(time_start,time_stop,time_step_s
     return data_dictionary
 end
 
-function maximize_cellmass_data_dictionary(time_start,time_stop,time_step_size)
+function maximize_cellmass_data_dictionary(organismid::Symbol)
 
     # HL-60 data taken from Sci reports paper -
     exchange_flux_array = [
@@ -169,7 +167,7 @@ function maximize_cellmass_data_dictionary(time_start,time_stop,time_step_size)
     ]
 
     # load the default data dictionary -
-    data_dictionary = MetabolismDataDictionary(time_start,time_stop,time_step_size)
+    data_dictionary = MetabolismDataDictionary(organismid)
 
     # modify the data dictionary -
     objective_coefficient_array = data_dictionary["objective_coefficient_array"]
@@ -212,11 +210,11 @@ function maximize_cellmass_data_dictionary(time_start,time_stop,time_step_size)
     return data_dictionary
 end
 
-function MetabolismDataDictionary(time_start,time_stop,time_step_size)
+function MetabolismDataDictionary(organismid::Symbol)
 
     # setup paths -
     path_to_cobra_mat_file = "$(pwd())/cobra_code/modelCore.mat"
-    path_to_cellmass_file = "$(pwd())/cobra_code/HL60-Biomass.csv"
+    path_to_cellmass_file = build_cellmass_file_path(organismid)
 
     # load the *.mat code from the cobra code folder -
     file = matopen(path_to_cobra_mat_file)
@@ -318,4 +316,32 @@ function MetabolismDataDictionary(time_start,time_stop,time_step_size)
     data_dictionary["cobra_dictionary"] = cobra_dictionary
     # =============================== DO NOT EDIT ABOVE THIS LINE ============================== #
 	return data_dictionary
+end
+
+# Helper functions -
+function build_cellmass_file_path(organismid::Symbol)
+
+    # we need to figure out which cellmass file to load -
+    # load the mapping file -
+    path_to_cellmass_map = "$(pwd())/cobra_code/cellmass/Map.json"
+
+    # parse this file, and return the mapping dictionary -
+    cellmass_mapping_dictionary = JSON.parsefile(path_to_cellmass_map)
+
+    # convert organismid to key -
+    key_value = string(organismid)
+    if (haskey(cellmass_mapping_dictionary,key_value) == true)
+
+        # ok, we have this key, grab the associated dictionary and load the filename -
+        cellmass_file_name = cellmass_mapping_dictionary[key_value]["cellmass_file_name"]
+
+        # build the path -
+        cellmass_file_path = "$(pwd())/cobra_code/cellmass/$(cellmass_file_name)"
+
+        # return -
+        return cellmass_file_path
+    end
+
+    # default -
+    path_to_default_cellmass_file = "$(pwd())/cobra_code/cellmass/Default-Biomass.csv"
 end

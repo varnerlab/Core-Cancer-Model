@@ -1,0 +1,8 @@
+{
+  "LINE_HL_60_TB":{
+    "cellmass_file_name":"HL60-Biomass.csv"
+  },
+  "LINE_MCF7":{
+    "cellmass_file_name":"MCF7-Biomass.csv"
+  }
+}
