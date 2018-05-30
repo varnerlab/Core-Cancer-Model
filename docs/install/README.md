@@ -1,4 +1,4 @@
-### Installation
+## Installation
 You can download the core cancer model code repository as a zip file, or `clone`/`pull` it by using the command (from the command-line):
 
 	$ git pull https://github.com/varnerlab/Core-Cancer-Model
