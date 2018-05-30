@@ -1,2 +1,2 @@
-### Calculating the reaction bounds
+## Calculating the reaction bounds
 Fill me in.
