@@ -85,7 +85,7 @@ function calculate_specific_rate_of_transcription(t,state_array,data_dictionary)
     maximum_specific_growth_rate = (1/doubling_time_cell)*log(e,2)                          # hr^-1
 
     # Calculate the rnapII_concentration -
-    rnapII_concentration = number_of_rnapII*(1/av_number)*(1/mass_of_single_cell)*1e6       # mumol/gdw
+    rnapII_concentration = number_of_rnapII*(1/av_number)*(1/mass_of_single_cell)*1e9       # nmol/gdw
 
     # Calculate the RNAP elongation rate -
     kcat_transcription_elongation = max_transcription_rate*(3600/average_gene_length)       # hr^-1

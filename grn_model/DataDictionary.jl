@@ -465,7 +465,7 @@ function GRNDataDictionary(organism::Symbol)
     end
 
     # Set the KD -
-    KD_array = 200*ones(number_of_genes) # average basal TF is 20000 per/cell
+    KD_array = 91*ones(number_of_genes) # average basal TF is 20000 per/cell
 
     # ----------------------------------------------------------------------------------------------------- #
     #
@@ -490,6 +490,7 @@ function GRNDataDictionary(organism::Symbol)
     data_dictionary["basal_transcription_factor_dictionary"] = transcription_factor_dictionary
     data_dictionary["system_dictionary"] = system_dictionary
     data_dictionary["mRNA_cluster_data_dictionary"] = mRNA_cluster_data_dictionary
+    data_dictionary["path_to_experimental_expression_file"] = path_to_experimental_expression_file
     # =============================== DO NOT EDIT ABOVE THIS LINE ========================================= #
 	return data_dictionary
 end

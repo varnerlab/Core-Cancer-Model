@@ -91,7 +91,7 @@
         "units":"ribsome/transcript"
       },
       "saturation_constant_transcription":{
-        "value":"875",
+        "value":"91",
         "units":"copies/cell"
       },
       "saturation_constant_translation":{

@@ -7,6 +7,7 @@ include("$(top_level_path)/grn_model/Discrete.jl")
 include("$(top_level_path)/grn_model/Control.jl")
 include("$(top_level_path)/grn_model/Cluster.jl")
 include("$(top_level_path)/grn_model/EvalGRNSystem.jl")
+include("$(top_level_path)/grn_model/SteadyStateModel.jl")
 
 # system includes -
 using MAT
