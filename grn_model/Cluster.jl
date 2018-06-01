@@ -72,7 +72,10 @@ function cluster_mRNA_data(path_to_expression_file,number_of_clusters)
     return mRNA_cluster_data_dictionary
 end
 
-function cluster_mRNA_simulation(mRNA_data_array,number_of_clusters)
+function cluster_mRNA_simulation(data_dictionary,mRNA_data_array,number_of_clusters)
+
+    # get list of genes -
+    list_of_genes = data_dictionary["list_of_genes"]
 
     # build tmp array -
     raw_data_array = [mRNA_data_array mRNA_data_array]
@@ -88,11 +91,8 @@ function cluster_mRNA_simulation(mRNA_data_array,number_of_clusters)
     (number_of_genes,number_of_cols) = size(raw_data_array)
     for gene_index = 1:number_of_genes
 
-        # grab the raw value -
-        raw_value = trunc(Int64,raw_data_array[gene_index,1])
-
         # build the tag -
-        gene_tag = "G_$(raw_value)"
+        gene_tag = list_of_genes[gene_index,2]
 
         # cache -
         push!(gene_id_array,gene_tag)

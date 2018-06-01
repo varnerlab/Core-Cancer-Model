@@ -121,7 +121,7 @@ end
 function write_gene_sequences_to_disk(path_to_input_file::String,path_to_output_file::String)
 
     # get -
-    gene_list = readdlm("Genes.net",',')
+    gene_list = readdlm(path_to_input_file,',')
 
     # how many genes do we have?
     number_of_genes = length(gene_list)
@@ -134,6 +134,8 @@ function write_gene_sequences_to_disk(path_to_input_file::String,path_to_output_
 
         # get the buffer -
         buffer = download_gene_sequence_from_kegg(gene_tag)
+
+        @show (gene_tag, gene_index, (isempty(buffer)))
 
         # dump to disk -
         file_name = "$(path_to_output_file)/$(gene_tag).seq"

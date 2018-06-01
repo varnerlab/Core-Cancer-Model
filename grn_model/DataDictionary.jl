@@ -146,6 +146,9 @@ function load_biophysical_data_dictionary(organismid::Symbol)
 
     # convert organismid to key, and update the model path -
     key_value = string(organismid)
+
+    @show key_value
+
     if (haskey(biophysics_mapping_dictionary,key_value) == true)
 
         # ok, we have this key, grab the associated dictionary and load the filename -
@@ -154,6 +157,8 @@ function load_biophysical_data_dictionary(organismid::Symbol)
         # where can we find the biophysical properties?
         path_to_model_file = "$(path_to_organism_directory)/$(biophysics_file_name)"
     end
+
+    @show path_to_model_file
 
     # ok, we have a path (perhaps organism specific), load it up -
     # load the biophysics dictionary -

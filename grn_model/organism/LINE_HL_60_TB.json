@@ -51,7 +51,7 @@
         "units":"copies/cell"
       },
       "mRNA_half_life_TF":{
-        "value":"12",
+        "value":"8",
         "units":"hr"
       },
       "protein_half_life":{
@@ -87,15 +87,15 @@
         "units":"copies/cell"
       },
       "polysome_number":{
-        "value":"4",
+        "value":"2",
         "units":"ribsome/transcript"
       },
       "saturation_constant_transcription":{
-        "value":"91",
+        "value":"150",
         "units":"copies/cell"
       },
       "saturation_constant_translation":{
-        "value":"20000",
+        "value":"5000000",
         "units":"copies/cell"
       },
       "average_protein_abundance":{
