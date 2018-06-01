@@ -136,7 +136,7 @@ function calculate_steady_state_protein(data_dictionary)
             # get the current -
             mRNA_value = transcript_concentration_array[mRNA_index[1]]
             if mRNA_value == 0.0
-                P = 0.04732687179487179
+                P = 0.04732687179487179 # mistake hack - should lookup, and then discount?
             else
                 # calculate the protein level -
                 mhat = (mRNA_value)/(KSAT+mRNA_value)

@@ -12,7 +12,7 @@ function maximize_cellmass_data_dictionary_dipp(organismid)
         "EX_cit(e)"	    -0.001048267      ;
         "EX_cl(e)"	     0                ;
         "EX_co2(e)"	     2.558242542      ;
-        "EX_glc(e)"	    -0.916906385      ;
+        "EX_glc(e)"	    -0.276906385      ;
         "EX_gln_L(e)"	-0.177572084      ;
         "EX_glu_L(e)"	 0.008261785      ;
         "EX_gly(e)"	     0.00052831       ;
@@ -69,8 +69,17 @@ function maximize_cellmass_data_dictionary_dipp(organismid)
         # find reaction index -
         reaction_tag_index = find_index_of_reaction(list_of_reaction_tags,reaction_tag)
 
-        # update the bound -
-        default_flux_bounds_array[reaction_tag_index,1:2] = constraint_value
+        if (constraint_value<0)
+
+            # update the bound -
+            default_flux_bounds_array[reaction_tag_index,1] = 1.25*constraint_value
+            default_flux_bounds_array[reaction_tag_index,2] = 0.25*constraint_value
+
+        else
+            # update the bound -
+            default_flux_bounds_array[reaction_tag_index,1] = 0.25*constraint_value
+            default_flux_bounds_array[reaction_tag_index,2] = 1.25*constraint_value
+        end
     end
 
     # # control -
@@ -265,7 +274,7 @@ function MetabolismDataDictionary(organismid::Symbol)
     ub = cobra_dictionary["ub"] # upper bound -
     for reaction_index = 1:number_of_reactions - 1
         default_flux_bounds_array[reaction_index,1] = lb[reaction_index]
-        default_flux_bounds_array[reaction_index,2] = 10.0
+        default_flux_bounds_array[reaction_index,2] = 20.0
     end
 
     # add default growth rate constraint?
