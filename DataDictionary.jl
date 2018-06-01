@@ -1,3 +1,80 @@
+function maximize_cellmass_data_dictionary_dipp_experimental(organismid)
+
+    # calculate the DIPP data_dictionary -
+    data_dictionary = maximize_cellmass_data_dictionary_dipp(organismid)
+
+    # Update the bounds, using our values -
+    exchange_flux_array = [
+
+        "DM_atp_c_"      1.07             ;
+        "EX_ala_L(e)"	 0.019221305      ;
+        "EX_arg_L(e)"	-0.048            ;
+        "EX_asn_L(e)"	-0.01651081       ;
+        "EX_asp_L(e)"	-0.004154395      ;
+        "EX_chol(e)"	-0.000851349      ;
+        "EX_cit(e)"	    -0.001048267      ;
+        "EX_cl(e)"	     0                ;
+        "EX_co2(e)"	     2.558242542      ;
+        "EX_glc(e)"	    -0.256906385      ;
+        "EX_gln_L(e)"	-0.048            ;
+        "EX_glu_L(e)"	 0.0031           ;
+        "EX_gly(e)"	     -0.0018          ;
+        "EX_h(e)"	     8.858968875      ;
+        "EX_h2o(e)"	    -1.971666594      ;
+        "EX_ile_L(e)"	-0.012471146      ;
+        "EX_k(e)"	     0                ;
+        "EX_lac_L(e)"	 1.19175303       ;
+        "EX_leu_L(e)"	-0.004940638      ;
+        "EX_lys_L(e)"	-0.003548132      ;
+        "EX_na1(e)"	     0                ;
+        "EX_nh4(e)"	     0.377364932      ;
+        "EX_o2(e)"	    -0.468052822      ;
+        "EX_orn(e)"	     0.013272831      ;
+        "EX_phe_L(e)"	-0.008165546      ;
+        "EX_pi(e)"	    -0.016314853      ;
+        "EX_pro_L(e)"	-0.001551575      ;
+        "EX_ser_L(e)"	-0.0079990443     ;
+        "EX_thr_L(e)"	-0.0043192918     ;
+        "EX_trp_L(e)"	-0.001773787      ;
+        "EX_tyr_L(e)"	-0.01016693       ;
+        "EX_urea(e)"	 0.028072828      ;
+        "EX_val_L(e)"	-0.0035015249     ;
+    ]
+
+    list_of_reaction_tags = data_dictionary["cobra_dictionary"]["rxns"]
+    default_flux_bounds_array = data_dictionary["default_flux_bounds_array"]
+
+    # update the flux bounds -
+    (number_of_exchange_fluxes,cols) = size(exchange_flux_array)
+    for exchange_flux_index = 1:number_of_exchange_fluxes
+
+        # get reaction tag and value -
+        reaction_tag = exchange_flux_array[exchange_flux_index,1]
+        constraint_value = exchange_flux_array[exchange_flux_index,2]
+
+        # find reaction index -
+        reaction_tag_index = find_index_of_reaction(list_of_reaction_tags,reaction_tag)
+
+        if (constraint_value<0)
+
+            # update the bound -
+            default_flux_bounds_array[reaction_tag_index,1] = 5.0*constraint_value
+            default_flux_bounds_array[reaction_tag_index,2] = 0.1*constraint_value
+
+        else
+            # update the bound -
+            default_flux_bounds_array[reaction_tag_index,1] = 0.1*constraint_value
+            default_flux_bounds_array[reaction_tag_index,2] = 5.00*constraint_value
+        end
+    end
+
+    # repack -
+    data_dictionary["default_flux_bounds_array"] = default_flux_bounds_array
+
+    # return the modified data dictionary -
+    return data_dictionary
+end
+
 function maximize_cellmass_data_dictionary_dipp(organismid)
 
     # HL-60 data taken from Sci reports paper -
