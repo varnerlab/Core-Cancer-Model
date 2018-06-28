@@ -1,157 +1,5 @@
-function maximize_cellmass_data_dictionary_dipp_experimental_atra(organismid)
+function maximize_cellmass_data_dictionary_dipp_experimental(organismid,exchange_flux_array)
 
-    # calculate the DIPP data_dictionary -
-    data_dictionary = maximize_cellmass_data_dictionary_dipp(organismid)
-
-    # Update the bounds, using our values -
-    exchange_flux_array = [
-
-        "DM_atp_c_"      1.07             1.0   ;
-        "EX_ala_L(e)"	 0.005            10.0 ;
-        "EX_arg_L(e)"	-0.01             1.0 ;
-        "EX_asn_L(e)"	-0.01651081       10.0 ;
-        "EX_asp_L(e)"	-0.004154395      10.0 ;
-        "EX_chol(e)"	-0.000851349      10.0  ;
-        "EX_cit(e)"	    -0.001048267      10.0   ;
-        "EX_cl(e)"	     0                1.0    ;
-        "EX_co2(e)"	     2.558242542      10.0   ;
-        "EX_glc(e)"	    -0.216906385      1.0   ;
-        "EX_gln_L(e)"	-0.02             20.0 ;
-        "EX_glu_L(e)"	 0.0031           10.0 ;
-        "EX_gly(e)"	     -0.0018          10.0   ;
-        "EX_h(e)"	     8.858968875      10.0 ;
-        "EX_h2o(e)"	    -1.971666594      10.0   ;
-        "EX_ile_L(e)"	-0.012471146      10.0 ;
-        "EX_k(e)"	     0                1.0 ;
-        "EX_lac_L(e)"	 1.03175303       1.0 ;
-        "EX_leu_L(e)"	-0.004940638      10.0 ;
-        "EX_lys_L(e)"	-0.003548132      10.0 ;
-        "EX_na1(e)"	     0                10.0   ;
-        "EX_nh4(e)"	     0.377364932      10.0   ;
-        "EX_o2(e)"	    -0.468052822      10.0    ;
-        "EX_orn(e)"	     0.013272831      10.0   ;
-        "EX_phe_L(e)"	-0.008165546      10.0 ;
-        "EX_pi(e)"	    -0.016314853      100.0    ;
-        "EX_pro_L(e)"	-0.001551575      10.0 ;
-        "EX_ser_L(e)"	-0.0079990443     10.0 ;
-        "EX_thr_L(e)"	-0.0043192918     10.0 ;
-        "EX_trp_L(e)"	-0.001773787      10.0 ;
-        "EX_tyr_L(e)"	-0.01016693       10.0 ;
-        "EX_urea(e)"	 0.028072828      100.0  ;
-        "EX_val_L(e)"	-0.0035015249     10.0 ;
-    ]
-
-    list_of_reaction_tags = data_dictionary["cobra_dictionary"]["rxns"]
-    default_flux_bounds_array = data_dictionary["default_flux_bounds_array"]
-
-    # update the flux bounds -
-    (number_of_exchange_fluxes,cols) = size(exchange_flux_array)
-    for exchange_flux_index = 1:number_of_exchange_fluxes
-
-        # get reaction tag and value -
-        reaction_tag = exchange_flux_array[exchange_flux_index,1]
-        constraint_value = exchange_flux_array[exchange_flux_index,2]
-        constraint_uncertainty = exchange_flux_array[exchange_flux_index,3]
-
-        # find reaction index -
-        reaction_tag_index = find_index_of_reaction(list_of_reaction_tags,reaction_tag)
-
-        if (constraint_value<0)
-
-            # update the bound -
-            default_flux_bounds_array[reaction_tag_index,1] = constraint_value*constraint_uncertainty
-            default_flux_bounds_array[reaction_tag_index,2] = constraint_value*(1/constraint_uncertainty)
-
-        else
-            # update the bound -
-            default_flux_bounds_array[reaction_tag_index,1] = constraint_value*(1/constraint_uncertainty)
-            default_flux_bounds_array[reaction_tag_index,2] = constraint_value*(constraint_uncertainty)
-        end
-    end
-
-    # repack -
-    data_dictionary["default_flux_bounds_array"] = default_flux_bounds_array
-
-    # return the modified data dictionary -
-    return data_dictionary
-end
-
-function maximize_cellmass_data_dictionary_dipp_experimental(organismid)
-
-    # calculate the DIPP data_dictionary -
-    data_dictionary = maximize_cellmass_data_dictionary_dipp(organismid)
-
-    # Update the bounds, using our values -
-    exchange_flux_array = [
-
-        "DM_atp_c_"      1.07             1.0   ;
-        "EX_ala_L(e)"	 0.019221305      10.0 ;
-        "EX_arg_L(e)"	-0.048            1.0 ;
-        "EX_asn_L(e)"	-0.01651081       10.0 ;
-        "EX_asp_L(e)"	-0.004154395      10.0 ;
-        "EX_chol(e)"	-0.000851349      10.0  ;
-        "EX_cit(e)"	    -0.001048267      10.0   ;
-        "EX_cl(e)"	     0                1.0    ;
-        "EX_co2(e)"	     2.558242542      10.0   ;
-        "EX_glc(e)"	    -0.256906385      1.0   ;
-        "EX_gln_L(e)"	-0.048            20.0 ;
-        "EX_glu_L(e)"	 0.0031           10.0 ;
-        "EX_gly(e)"	     -0.0018          10.0   ;
-        "EX_h(e)"	     8.858968875      10.0 ;
-        "EX_h2o(e)"	    -1.971666594      10.0   ;
-        "EX_ile_L(e)"	-0.012471146      10.0 ;
-        "EX_k(e)"	     0                1.0 ;
-        "EX_lac_L(e)"	 1.16175303       1.0 ;
-        "EX_leu_L(e)"	-0.004940638      10.0 ;
-        "EX_lys_L(e)"	-0.003548132      10.0 ;
-        "EX_na1(e)"	     0                10.0   ;
-        "EX_nh4(e)"	     0.377364932      10.0   ;
-        "EX_o2(e)"	    -0.468052822      10.0    ;
-        "EX_orn(e)"	     0.013272831      10.0   ;
-        "EX_phe_L(e)"	-0.008165546      10.0 ;
-        "EX_pi(e)"	    -0.016314853      100.0    ;
-        "EX_pro_L(e)"	-0.001551575      10.0 ;
-        "EX_ser_L(e)"	-0.0079990443     10.0 ;
-        "EX_thr_L(e)"	-0.0043192918     10.0 ;
-        "EX_trp_L(e)"	-0.001773787      10.0 ;
-        "EX_tyr_L(e)"	-0.01016693       10.0 ;
-        "EX_urea(e)"	 0.028072828      100.0  ;
-        "EX_val_L(e)"	-0.0035015249     10.0 ;
-    ]
-
-    list_of_reaction_tags = data_dictionary["cobra_dictionary"]["rxns"]
-    default_flux_bounds_array = data_dictionary["default_flux_bounds_array"]
-
-    # update the flux bounds -
-    (number_of_exchange_fluxes,cols) = size(exchange_flux_array)
-    for exchange_flux_index = 1:number_of_exchange_fluxes
-
-        # get reaction tag and value -
-        reaction_tag = exchange_flux_array[exchange_flux_index,1]
-        constraint_value = exchange_flux_array[exchange_flux_index,2]
-        constraint_uncertainty = exchange_flux_array[exchange_flux_index,3]
-
-        # find reaction index -
-        reaction_tag_index = find_index_of_reaction(list_of_reaction_tags,reaction_tag)
-
-        if (constraint_value<0)
-
-            # update the bound -
-            default_flux_bounds_array[reaction_tag_index,1] = constraint_value*constraint_uncertainty
-            default_flux_bounds_array[reaction_tag_index,2] = constraint_value*(1/constraint_uncertainty)
-
-        else
-            # update the bound -
-            default_flux_bounds_array[reaction_tag_index,1] = constraint_value*(1/constraint_uncertainty)
-            default_flux_bounds_array[reaction_tag_index,2] = constraint_value*(constraint_uncertainty)
-        end
-    end
-
-    # repack -
-    data_dictionary["default_flux_bounds_array"] = default_flux_bounds_array
-
-    # return the modified data dictionary -
-    return data_dictionary
 end
 
 function maximize_cellmass_data_dictionary_dipp(organismid)
@@ -191,283 +39,53 @@ function maximize_cellmass_data_dictionary_dipp(organismid)
         # find reaction index -
         reaction_tag_index = find_index_of_reaction(list_of_reaction_tags,reaction_tag)
 
-        if (constraint_value<0)
-
-            # update the bound -
-            default_flux_bounds_array[reaction_tag_index,1] = constraint_value*constraint_uncertainty
-            default_flux_bounds_array[reaction_tag_index,2] = constraint_value*(1/constraint_uncertainty)
-
-        else
-            # update the bound -
-            default_flux_bounds_array[reaction_tag_index,1] = constraint_value*(1/constraint_uncertainty)
-            default_flux_bounds_array[reaction_tag_index,2] = constraint_value*(constraint_uncertainty)
-        end
-    end
-
-    # # control -
-    # default_flux_bounds_array[380,1] = 0        ; # 380,DM_nadh_trans[m],nadh[m]+nadp[m],nad[m]+nadph[m],0,inf
-    # default_flux_bounds_array[380,2] = 3.14     ; # 380,DM_nadh_trans[m],nadh[m]+nadp[m],nad[m]+nadph[m],0,inf
-
-    # load the XSS and vmax values -
-    path_to_steady_state_expression_data = "$(pwd())/grn_model/XSS.dat.1"
-    path_to_vmax_data_file = "$(pwd())/config/VMAX-CCM-Palsson-SciReports-2017.dat"
-    path_to_rules_map = "$(pwd())/Network.rules"
-
-    # get the rules -
-    rules_map = readdlm(path_to_rules_map,',')
-
-    # get the VMAX -
-    vmax_array = readdlm(path_to_vmax_data_file)
-
-    # get the steady-state expression state, and compute the rules -
-    state_array = readdlm(path_to_steady_state_expression_data)
-    number_of_mRNA = 1760
-    default_enzyme_concentation = 0.04732687179487179 # mumol/gDW
-    protein_array = state_array[(number_of_mRNA+1):end]
-    scaled_protein_array = (1/default_enzyme_concentation)*protein_array
-    v_array = gene_association_rules(scaled_protein_array,data_dictionary)
-
-    # ok, map these rules (and the VMAXs to the specific reactions)
-    for flux_index = 1:total_number_of_fluxes
-
-        if (flux_index>number_of_exchange_fluxes)
-
-            # get the VMAX value -
-            vmax = vmax_array[flux_index]
-            rule_value = v_array[flux_index]
-
-            if (list_of_reversible_reactions[flux_index] == 0)
-                # update the upper bounds -
-                default_flux_bounds_array[flux_index,2] = vmax*rule_value
-            else
-
-                # reversible - update the back reaction as well -
-                default_flux_bounds_array[flux_index,1] = -1*vmax*rule_value
-                default_flux_bounds_array[flux_index,2] = vmax*rule_value
-            end
-        end
-    end
-
-    # repack -
-    data_dictionary["default_flux_bounds_array"] = default_flux_bounds_array
-    data_dictionary["species_bounds_array"] = species_bounds_array
-    data_dictionary["objective_coefficient_array"] = objective_coefficient_array
-
-    # return the modified data dictionary -
-    return data_dictionary
-end
-
-function maximize_cellmass_data_dictionary_dipp_old(organismid)
-
-    # HL-60 data taken from Sci reports paper -
-    exchange_flux_array = [
-
-        "DM_atp_c_"      1.07          1.0   ;
-        "EX_ala_L(e)"	 0.019221305   1.0   ;
-        "EX_arg_L(e)"	-0.024927303   1.0   ;
-        "EX_asn_L(e)"	-0.01651081    1.0   ;
-        "EX_asp_L(e)"	-0.004154395   1.0   ;
-        "EX_chol(e)"	-0.000851349   1.0   ;
-        "EX_cit(e)"	    -0.001048267   1.0   ;
-        "EX_cl(e)"	     0             1.0   ;
-        "EX_co2(e)"	     2.558242542   1.0   ;
-        "EX_glc(e)"	    -0.276906385   1.0   ;
-        "EX_gln_L(e)"	-0.177572084   1.0   ;
-        "EX_glu_L(e)"	 0.008261785   1.0   ;
-        "EX_gly(e)"	     0.00052831    1.0   ;
-        "EX_h(e)"	     8.858968875   1.0   ;
-        "EX_h2o(e)"	    -1.971666594   1.0   ;
-        "EX_ile_L(e)"	-0.012471146   1.0   ;
-        "EX_k(e)"	     0             1.0   ;
-        "EX_lac_L(e)"	 1.26175303    1.0   ;
-        "EX_leu_L(e)"	-0.01940638    1.0   ;
-        "EX_lys_L(e)"	-0.02548132    1.0   ;
-        "EX_na1(e)"	     0             1.0   ;
-        "EX_nh4(e)"	     0.377364932   1.0   ;
-        "EX_o2(e)"	    -0.468052822   1.0   ;
-        "EX_orn(e)"	     0.013272831   1.0   ;
-        "EX_phe_L(e)"	-0.008165546   1.0   ;
-        "EX_pi(e)"	    -0.016314853   1.0   ;
-        "EX_pro_L(e)"	-0.002551575   1.0   ;
-        "EX_ser_L(e)"	-0.039990443   1.0   ;
-        "EX_thr_L(e)"	-0.013192918   1.0   ;
-        "EX_trp_L(e)"	-0.001773787   1.0   ;
-        "EX_tyr_L(e)"	-0.01016693    1.0   ;
-        "EX_urea(e)"	 0.028072828   1.0   ;
-        "EX_val_L(e)"	-0.015015249   1.0   ;
-    ]
-
-    # load the default data dictionary -
-    data_dictionary = MetabolismDataDictionary(organismid)
-
-    # modify the data dictionary -
-    objective_coefficient_array = data_dictionary["objective_coefficient_array"]
-    objective_coefficient_array[end] = -1.0
-
-    # we need to set the glucose uptake rate -
-    species_bounds_array = data_dictionary["species_bounds_array"]
-    default_flux_bounds_array = data_dictionary["default_flux_bounds_array"]
-    list_of_species = data_dictionary["cobra_dictionary"]["mets"]
-    list_of_reaction_tags = data_dictionary["cobra_dictionary"]["rxns"]
-    list_of_reversible_reactions = data_dictionary["cobra_dictionary"]["rev"]
-
-    # add cell mass reaction -
-    list_of_reversible_reactions = [list_of_reversible_reactions ; 0]
-
-    # how many total fluxes do we have?
-    (total_number_of_fluxes,nc) = size(default_flux_bounds_array)
-
-    # update the flux bounds -
-    (number_of_exchange_fluxes,cols) = size(exchange_flux_array)
-    for exchange_flux_index = 1:number_of_exchange_fluxes
-
-        # get reaction tag and value -
-        reaction_tag = exchange_flux_array[exchange_flux_index,1]
-        constraint_value = exchange_flux_array[exchange_flux_index,2]
-        constraint_uncertainty = exchange_flux_array[exchange_flux_index,3]
-
-        # find reaction index -
-        reaction_tag_index = find_index_of_reaction(list_of_reaction_tags,reaction_tag)
-
-        if (constraint_value<0)
-
-            # update the bound -
-            default_flux_bounds_array[reaction_tag_index,1] = constraint_value*constraint_uncertainty
-            default_flux_bounds_array[reaction_tag_index,2] = constraint_value*(1/constraint_uncertainty)
-
-        else
-            # update the bound -
-            default_flux_bounds_array[reaction_tag_index,1] = constraint_value*(1/constraint_uncertainty)
-            default_flux_bounds_array[reaction_tag_index,2] = constraint_value*(constraint_uncertainty)
-        end
-    end
-
-    # # control -
-    # default_flux_bounds_array[380,1] = 0        ; # 380,DM_nadh_trans[m],nadh[m]+nadp[m],nad[m]+nadph[m],0,inf
-    # default_flux_bounds_array[380,2] = 3.14     ; # 380,DM_nadh_trans[m],nadh[m]+nadp[m],nad[m]+nadph[m],0,inf
-
-    # load the XSS and vmax values -
-    path_to_steady_state_expression_data = "$(pwd())/grn_model/XSS.dat.1"
-    path_to_vmax_data_file = "$(pwd())/config/VMAX-CCM-Palsson-SciReports-2017.dat"
-    path_to_rules_map = "$(pwd())/Network.rules"
-
-    # get the rules -
-    rules_map = readdlm(path_to_rules_map,',')
-
-    # get the VMAX -
-    vmax_array = readdlm(path_to_vmax_data_file)
-
-    # get the steady-state expression state, and compute the rules -
-    state_array = readdlm(path_to_steady_state_expression_data)
-    number_of_mRNA = 1760
-    default_enzyme_concentation = 0.04732687179487179 # mumol/gDW
-    protein_array = state_array[(number_of_mRNA+1):end]
-    scaled_protein_array = (1/default_enzyme_concentation)*protein_array
-    v_array = gene_association_rules(scaled_protein_array,data_dictionary)
-
-    # ok, map these rules (and the VMAXs to the specific reactions)
-    for flux_index = 1:total_number_of_fluxes
-
-        if (flux_index>number_of_exchange_fluxes)
-
-            # get the VMAX value -
-            vmax = vmax_array[flux_index]
-            rule_value = v_array[flux_index]
-
-            if (list_of_reversible_reactions[flux_index] == 0)
-                # update the upper bounds -
-                default_flux_bounds_array[flux_index,2] = vmax*rule_value
-            else
-
-                # reversible - update the back reaction as well -
-                default_flux_bounds_array[flux_index,1] = -1*vmax*rule_value
-                default_flux_bounds_array[flux_index,2] = vmax*rule_value
-            end
-        end
-    end
-
-    # repack -
-    data_dictionary["default_flux_bounds_array"] = default_flux_bounds_array
-    data_dictionary["species_bounds_array"] = species_bounds_array
-    data_dictionary["objective_coefficient_array"] = objective_coefficient_array
-
-    # return the modified data dictionary -
-    return data_dictionary
-end
-
-function maximize_cellmass_data_dictionary(organismid::Symbol)
-
-    # HL-60 data taken from Sci reports paper -
-    exchange_flux_array = [
-
-        "DM_atp_c_"      1.07             ;
-        "EX_ala_L(e)"	 0.019221305      ;
-        "EX_arg_L(e)"	-0.024927303      ;
-        "EX_asn_L(e)"	-0.01651081       ;
-        "EX_asp_L(e)"	-0.004154395      ;
-        "EX_chol(e)"	-0.000851349      ;
-        "EX_cit(e)"	    -0.001048267      ;
-        "EX_cl(e)"	     0                ;
-        "EX_co2(e)"	     2.558242542      ;
-        "EX_glc(e)"	    -0.916906385      ;
-        "EX_gln_L(e)"	-0.177572084      ;
-        "EX_glu_L(e)"	 0.008261785      ;
-        "EX_gly(e)"	     0.00052831       ;
-        "EX_h(e)"	     8.858968875      ;
-        "EX_h2o(e)"	    -1.971666594      ;
-        "EX_ile_L(e)"	-0.012471146      ;
-        "EX_k(e)"	     0                ;
-        "EX_lac_L(e)"	 1.26175303       ;
-        "EX_leu_L(e)"	-0.01940638       ;
-        "EX_lys_L(e)"	-0.02548132       ;
-        "EX_na1(e)"	     0                ;
-        "EX_nh4(e)"	     0.377364932      ;
-        "EX_o2(e)"	    -0.468052822      ;
-        "EX_orn(e)"	     0.013272831      ;
-        "EX_phe_L(e)"	-0.008165546      ;
-        "EX_pi(e)"	    -0.016314853      ;
-        "EX_pro_L(e)"	-0.002551575      ;
-        "EX_ser_L(e)"	-0.039990443      ;
-        "EX_thr_L(e)"	-0.013192918      ;
-        "EX_trp_L(e)"	-0.001773787      ;
-        "EX_tyr_L(e)"	-0.01016693       ;
-        "EX_urea(e)"	 0.028072828      ;
-        "EX_val_L(e)"	-0.015015249      ;
-    ]
-
-    # load the default data dictionary -
-    data_dictionary = MetabolismDataDictionary(organismid)
-
-    # modify the data dictionary -
-    objective_coefficient_array = data_dictionary["objective_coefficient_array"]
-    objective_coefficient_array[end] = -1.0
-
-    # we need to set the glucose uptake rate -
-    species_bounds_array = data_dictionary["species_bounds_array"]
-    default_flux_bounds_array = data_dictionary["default_flux_bounds_array"]
-    list_of_species = data_dictionary["cobra_dictionary"]["mets"]
-    list_of_reaction_tags = data_dictionary["cobra_dictionary"]["rxns"]
-    list_of_reversible_reactions = data_dictionary["cobra_dictionary"]["rev"]
-
-    # add cell mass reaction -
-    list_of_reversible_reactions = [list_of_reversible_reactions ; 0]
-
-    # how many total fluxes do we have?
-    (total_number_of_fluxes,nc) = size(default_flux_bounds_array)
-
-    # update the flux bounds -
-    (number_of_exchange_fluxes,cols) = size(exchange_flux_array)
-    for exchange_flux_index = 1:number_of_exchange_fluxes
-
-        # get reaction tag and value -
-        reaction_tag = exchange_flux_array[exchange_flux_index,1]
-        constraint_value = exchange_flux_array[exchange_flux_index,2]
-
-        # find reaction index -
-        reaction_tag_index = find_index_of_reaction(list_of_reaction_tags,reaction_tag)
+        # bound value -
+        tmp_value_1 = constraint_value*(1/constraint_uncertainty)
+        tmp_value_2 = constraint_value*(constraint_uncertainty)
 
         # update the bound -
-        default_flux_bounds_array[reaction_tag_index,1:2] = constraint_value
+        default_flux_bounds_array[reaction_tag_index,1] = min(tmp_value_1,tmp_value_2)
+        default_flux_bounds_array[reaction_tag_index,2] = max(tmp_value_1,tmp_value_2)
+    end
+
+    # load the XSS and vmax values -
+    path_to_steady_state_expression_data = "$(pwd())/grn_model/XSS.dat.1"
+    path_to_vmax_data_file = "$(pwd())/config/VMAX-CCM-Palsson-SciReports-2017.dat"
+    path_to_rules_map = "$(pwd())/Network.rules"
+
+    # get the rules -
+    rules_map = readdlm(path_to_rules_map,',')
+
+    # get the VMAX -
+    vmax_array = readdlm(path_to_vmax_data_file)
+
+    # get the steady-state expression state, and compute the rules -
+    state_array = readdlm(path_to_steady_state_expression_data)
+    number_of_mRNA = 1760
+    default_enzyme_concentation = 0.04732687179487179 # mumol/gDW
+    protein_array = state_array[(number_of_mRNA+1):end]
+    scaled_protein_array = (1/default_enzyme_concentation)*protein_array
+    v_array = gene_association_rules(scaled_protein_array,data_dictionary)
+
+    # ok, map these rules (and the VMAXs to the specific reactions)
+    for flux_index = 1:total_number_of_fluxes
+
+        if (flux_index>number_of_exchange_fluxes)
+
+            # get the VMAX value -
+            vmax = vmax_array[flux_index]
+            rule_value = v_array[flux_index]
+
+            if (list_of_reversible_reactions[flux_index] == 0)
+                # update the upper bounds -
+                default_flux_bounds_array[flux_index,2] = vmax*rule_value
+            else
+
+                # reversible - update the back reaction as well -
+                default_flux_bounds_array[flux_index,1] = -1*vmax*rule_value
+                default_flux_bounds_array[flux_index,2] = vmax*rule_value
+            end
+        end
     end
 
     # repack -

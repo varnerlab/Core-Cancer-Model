@@ -2,7 +2,7 @@
 include("Include.jl")
 
 # what organism are we going to use?
-organismid = :LINE_HL_60_TB
+organismid = :LINE_T_47D
 
 # load the data dictionary -
 #data_dictionary = maximize_cellmass_data_dictionary_dipp_experimental(organismid)

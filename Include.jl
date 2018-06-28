@@ -17,3 +17,4 @@ import GRNModule
 using GLPK
 using MAT
 using PyPlot
+using Distributions

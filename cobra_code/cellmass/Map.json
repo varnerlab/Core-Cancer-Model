@@ -7,5 +7,11 @@
   },
   "LINE_MDA_MB_435":{
     "cellmass_file_name":"MDA_MB_435-Biomass.csv"
+  },
+  "LINE_MDA_MB_231_ATCC":{
+    "cellmass_file_name":"MDA_MB_231_ATCC-Biomass.csv"
+  },
+  "LINE_T_47D":{
+    "cellmass_file_name":"LINE_T_47D-Biomass.csv"
   }
 }

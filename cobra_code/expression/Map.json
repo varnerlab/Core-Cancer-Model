@@ -7,5 +7,11 @@
   },
   "LINE_MDA_MB_435":{
     "expression_file_name":"MDA_MB_435-Expression.csv"
+  },
+  "LINE_MDA_MB_231_ATCC":{
+    "expression_file_name":"MDA_MB_231_ATCC-Expression.csv"
+  },
+  "LINE_T_47D":{
+    "expression_file_name":"LINE_T_47D-Expression.csv"
   }
 }
