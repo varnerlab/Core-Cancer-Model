@@ -1,0 +1,11 @@
+{
+  "LINE_HL_60_TB":{
+    "constraints_file_name":"HL60-Constraints.csv"
+  },
+  "LINE_MCF7":{
+    "constraints_file_name":"MCF7-Constraints.csv"
+  },
+  "LINE_MDA_MB_435":{
+    "constraints_file_name":"MDA_MB_435-Constraints.csv"
+  }
+}

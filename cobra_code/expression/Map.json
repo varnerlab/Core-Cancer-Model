@@ -4,5 +4,8 @@
   },
   "LINE_MCF7":{
     "expression_file_name":"MCF7-Expression.csv"
+  },
+  "LINE_MDA_MB_435":{
+    "expression_file_name":"MDA_MB_435-Expression.csv"
   }
 }

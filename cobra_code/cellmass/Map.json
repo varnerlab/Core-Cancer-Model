@@ -4,5 +4,8 @@
   },
   "LINE_MCF7":{
     "cellmass_file_name":"MCF7-Biomass.csv"
+  },
+  "LINE_MDA_MB_435":{
+    "cellmass_file_name":"MDA_MB_435-Biomass.csv"
   }
 }

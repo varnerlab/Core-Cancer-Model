@@ -6,6 +6,7 @@ include("$(pwd())/DataDictionary.jl")
 include("$(pwd())/Flux.jl")
 include("$(pwd())/Reconstruction.jl")
 include("$(pwd())/Rules.jl")
+include("$(pwd())/Utility.jl")
 
 # path to my subsystem modules -
 path_to_grn_module = "$(top_level_path)/grn_model"
